@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path Visualizer</title>
+    <!-- font Awesome Css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     
+     <div class="InputArea">
+         <div class="algoName">
+             <p>Search(BFS) visualizer</p>
+             <p>Shortest Path Algorithm</p>
+         </div>
+         <div class="algo-inputs">
+             <div class="take-inputs">
+                 <!-- <div class="wt"> 
+                     Set Weight :
+                     <input type="number" name="" id="setwt"> 
+                 </div> -->
+                 <div class="st-pt">Start Point : 
+                    <input type="number" id="st-rowNo" min="0" max="19">
+                    <input type="number" id="st-colNo" min="0" max="19">
+                 </div>
+                 <div class="end-pt">
+                    End Point : 
+                    <input type="number" id="en-rowNo" min="0" max="19">
+                    <input type="number" id="en-colNo" min="0" max="19">
+                 </div> 
+                 
+             </div>
+             <div class="AlgoButton">
+                 <Button id="start-Algo">Start BFS</Button>
+             </div>
+         </div>
+
+     </div>
+
+     <div class="OutputArea">
+     </div>
+
+     <script src="./init.js"></script>
+     <script src="./script.js"></script>
+     <script src="./queue.js"></script>
+     <script src="./algorithm.js"></script>
+     
+</body>
+</html>
