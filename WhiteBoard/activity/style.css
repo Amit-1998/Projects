@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    /* overflow: hidden; */
+}
+
+body{
+    overflow: hidden;
+} 
+
+.tools-container {
+    height: 100px;
+    /* background: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tools-content {
+    height: 70%;
+    width: 70%;
+    /* border: 1px solid; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: aliceblue;
+    border-radius: 16px;
+}
+
+.tool {
+    height: 55%;
+    width: 10%;
+    position: relative;
+}
+
+.tool img {
+    height: 100%;
+    width: 100%;
+}
+
+.drawing-container {}
+
+#canvas {
+    /* width: 100%; can't take it as it blurs the drawing*/
+}
+
+.sticky {
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    height: 200px;
+    width: 300px;
+    /* background: lightblue; */
+}
+
+.sticky-header {
+    height: 13%;
+    background: lightsalmon;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.sticky-header div {
+    height: 70%;
+    margin-right: 10px;
+    width: 7%;
+    border-radius: 50px;
+}
+
+.minimize {
+    background: chartreuse;
+}
+
+.close {
+    background: steelblue;
+}
+
+.sticky-content {
+    height: 87%;
+    /* border: 1px solid; */
+    border-bottom-right-radius: 20px;
+    background: lightgrey;
+    outline: none;
+    padding: 10px;
+}
+
+.sticky-image-div {
+    height: 87%;
+}
+
+.sticky-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.hide {
+    display: none;
+}
+
+.active-tool {
+    /* transform: scale(1.2); */
+}
+
+.fade {
+    opacity: 0.4;
+}
+
+.tool-options {
+    height: 100px;
+    width: 100px;
+    background: aliceblue;
+    position: absolute;
+    top: 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2px;
+}
+
+.pen-size {}
+
+.pen-size input {
+    width: 100%;
+}
+
+.pen-colors {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.pen-colors div {
+    height: 15px;
+    width: 14px;
+    border-radius: 50px;
+}
+
+.black {
+    background: black;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.blue {
+    background: blue;
+}
+
+.green {
+    background: green;
+}
+
+.red {
+    background: red;
+}
+
+.eraser-size{
+
+}
+
+.eraser-size input{
+   width: 100%;
+}
+
