@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatApp</title>
+
+  <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <div class="chat-container">
+           <div class="left-view">
+                <div class="me">
+                     <div class="user-image">
+                          <img src="default.jpg" alt="">       
+                     </div>
+               <div class="user-name"></div>
+                </div>
+                <div class="online-list">                        
+                        <!-- <div class="user">
+                              <div class="user-image">
+                                   <img src="default.jpg" alt="">       
+                              </div>
+                              <div class="user-name">Tony</div>
+                        </div> -->
+
+                </div>
+           </div>
+           <div class="right-view">
+                 <div class="chat-window">
+                       <!-- <div class="chat join">Steve joined the chat</div>
+                            <div class="chat leave">Steve left the chat</div>
+                              <div class="chat left">Hey Guys</div>
+                              <div class="chat right">Hey Everyone</div>
+                              <div class="chat right">How are you ?</div>
+                              <div class="chat left">Fine !</div>
+                              <div class="chat join">Steve joined the chat</div>
+                              <div class="chat leave">Steve left the chat</div>
+                              <div class="chat left">Hey Guys</div> -->
+                 </div>
+                 <div class="chat-input-box">
+                      <input type="text" class= "chat-input">
+                 </div>
+           </div>
+      </div>
+    
+      <!-- client end ka socket.io ka code  -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js" integrity="sha512-PU5S6BA03fRv1Q5fpwXjg5nlRrgdoguZ74urFInkbABMCENyx5oP3hrDzYMMPh3qdLdknIvrGj3yqZ4JuU7Nag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script>
+            const socket = io(); //  jaise io() ko call lagegi na socket connect ho jayega iske connect hote hi backend mein io.on() chal jayega
+          //   console.log(socket);
+      </script>
+      <script src="./script.js"></script>
+      <script src="./socket.js"></script>
+</body>
+</html>

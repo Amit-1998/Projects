@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     *{
+         margin: 0px;
+     }
+</style>
+
+<body>
+    
+    <canvas></canvas>
+
+    <script>
+        let canvas = document.querySelector("canvas");
+        let ctx = canvas.getContext("2d");
+
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+
+        let img = document.createElement("img");
+        img.src = "https://images.pexels.com/photos/1471294/pexels-photo-1471294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500";
+
+        //shift canvas origin
+        ctx.translate( canvas.width/2, canvas.height/2); // x se translate and y se translate 
+        ctx.scale(2,2);
+        ctx.translate( -canvas.width/2, -canvas.height/2);
+
+        img.onload = function(){
+            ctx.drawImage(img,0,0);
+        }
+ </script>
+</body>
+</html>

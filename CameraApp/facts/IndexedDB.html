@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>DBName <input id="dbname" type="text"></div>
+    <div>DBVersion <input id="dbversion" type="text"></div>
+    <button id="opendb">Open Database</button>
+
+     <!-- mediaTable ban chuki hogi -->
+    <div>MediaId <input id="mid" type="text"></div>
+    <div>MediaType <input id="mediaType" type="text"></div>
+    <button id="addmedia">Add Media</button>
+
+    <div>
+         <button id="showmedia">Show Media</button>
+    </div>
+    
+    <script>
+         let dbName = document.getElementById("dbname");
+         let dbversion = document.getElementById("dbversion");
+         let openDbButton = document.getElementById("opendb");
+         let db;
+
+         let mid = document.getElementById("mid");
+         let mediaType = document.getElementById("mediaType");
+         let addMediaButton = document.getElementById("addmedia");
+         let showMediaButton = document.getElementById("showmedia");
+
+         openDbButton.addEventListener("click", openDB);
+
+         addMediaButton.addEventListener("click", addMedia);
+
+         showMediaButton.addEventListener("click", showMedia);
+
+         // fetch media
+         function showMedia(){
+             let txnObject = db.transaction("MediaTable", "readonly");
+             let mediaTable = txnObject.objectStore("MediaTable"); //to get complete table
+
+             let cursorObject = mediaTable.openCursor(); // to iterate on all the values / tuples
+             cursorObject.onsuccess = function(e){
+                  let cursor = cursorObject.result; // pehla tuple milega table ka
+                  if(cursor){
+                      console.log(cursor.value); // mid: 1 ke samne value mein pada object milega 
+                      // aage tuples milte rahenge(means fir function(e) ko call lagti rahegi continue() se )
+                      cursor.continue();
+                  }
+                  
+             }
+
+         }
+
+         function addMedia(){
+              // db mein media add hojaega
+              let txnObject = db.transaction("MediaTable", "readwrite"); // start transaction on mediaTable //create a transaction on a database
+              // "Gallery" is a DB name and "readwrite" is kind of access
+              let mediaTable = txnObject.objectStore("MediaTable");   // this will get access to mediaTable           
+              mediaTable.add({mid: mid.value, type: mediaType.value}); // it will add this object in mediaTable or mediaStore
+
+              // txn fail bhi ho sakti hai, when? => when we pass duplicate mid
+              txnObject.onerror = function(e){
+                   console.log("txn failed");
+                   console.log(e);
+              }
+
+         }
+ 
+         function openDB(){
+                 //db open hoga
+                 // if we not provide dbVersion ki value than it takes it as 1
+               let dbOpenRequest = indexedDB.open(dbName.value, dbversion.value); // async funct => data baad mein aayega ,pehle object dega hame
+               console.log(dbOpenRequest);
+
+               dbOpenRequest.onupgradeneeded = function(e){
+                    alert("Inside on upgrade needed !!");
+                    console.log(e);
+                    db = e.target.result;
+                    db.createObjectStore("MediaTable", {keyPath: "mid"});
+               }
+
+               dbOpenRequest.onsuccess = function(e){
+                    alert("Inside on success !!");
+                    // console.log(e);
+                    db = e.target.result;
+               }
+               
+               dbOpenRequest.onerror = function(e){
+                    alert("Inside on error !!");
+               }
+
+         }
+
+    </script>
+</body>
+</html>

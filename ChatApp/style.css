@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.chat-container {
+    /* height: 100vh;
+    display: flex;
+    background: lightgray; */
+    height: 100vh;
+    background: lightgray;
+    display: flex;
+}
+
+.left-view {
+    /* height: 100%;
+    width: 25%;
+    background: aliceblue; */
+    height: 100%;
+    width: 25%;
+    background: aliceblue;
+}
+
+.right-view {
+    width: 75%;
+    height: 100%;
+    background: #34495e;
+}
+
+.chat-window {
+     /* height: 90%; */
+     height: 90%;
+     padding: 10px;
+     width: 100%;
+     overflow: auto; 
+}
+
+.chat {
+    color: white;
+    min-height: 30px;
+    margin-top: 15px;
+    border-radius: 10px;
+    width: 250px;
+    padding: 5px;
+    /* min-width: 33px; issue aa rha h is ein*/
+    clear: both;  /* when apply float to rightchats than it did all right chats chipk ke for that we use clear: both means sabhi chat ke baad kuch bhi na aaye*/                          
+    word-break: break-all; /* chat box se bahar nhi jayega message*/ 
+}
+
+.left {
+    background: #2c3e50;
+    display: flex;
+    align-items: center; 
+}
+
+.right {
+    background: #9b59b6;
+    display: flex;
+    align-items: center;
+    float: right; /* used for positioning and formatting content (left,right,none,inherit) */
+}
+
+.join {
+    background: #3498db;
+    width: 80%;
+    margin: auto;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.leave {
+    background: #e74c3c;
+    width: 80%;
+    margin: auto;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.chat-input-box {
+    /* height: 10%;
+    background: #34495e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid lightgray; */
+    height: 10%;
+    background: #34495e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.chat-input-box input {
+    /* height: 60%;
+    width: 80%;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    /* font-size: 1.2rem; */
+    /* padding: 10px;
+    background: #2c3e50;
+    color: white; */
+    height: 70%;
+    width: 80%;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    padding: 10px;
+    background: #2c3e50;
+    color: white;
+    /* font-weight: bold; */
+}
