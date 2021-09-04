@@ -1,0 +1,27 @@
+.home-logout-btn{
+    position: fixed;
+    bottom: 4rem;
+    right: 24px;
+    height: 4rem;
+    width: 5rem;
+    border: none;
+    border-radius: 50%;
+}
+
+.video-container{
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory; /*videoContainer(parent) y direction mein snap karega which is mandatory */
+
+}
+
+input[type="file"]{
+    border: none;
+    width: 6rem;
+    outline: none;
+    position: fixed;
+    bottom: 10rem;
+    right: 25px;
+}
