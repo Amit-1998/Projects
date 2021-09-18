@@ -15,20 +15,20 @@ let AuthProvider = (props)=>{ // isko props milenge
     useEffect(()=>{
         let unsub = auth.onAuthStateChanged( async (user)=>{
               if(user){
-                  let { displayName, email, uid, photoURL } = user;
+                  let { displayName, email, uid, photoURL} = user;
 
-                  let docRef = firestore.collection("user").doc(uid); //google vaale user ki uid se fake object bnaya
+                  let docRef = firestore.collection("users").doc(uid); //google vaale user ki uid se fake object bnaya
 
                   let documentSnapshot = await docRef.get();
                   if(!documentSnapshot.exists){
                       // actual mein data set kar dijiye uske document mein jaake
-                      docRef.set( {displayName, email, photoURL} )
+                      docRef.set( {displayName, email, photoURL, posts: []} )
                     //  "user" collection mein jo pehle fake document the  ab usko actual mein save kar dia using set property of docRef
                     
                     
                   }
 
-                  setUser( { displayName, email, uid, photoURL } );
+                  setUser( { displayName, email, uid, photoURL, posts: []} );
               }
               else{
                   setUser(null);

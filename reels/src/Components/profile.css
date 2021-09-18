@@ -1,0 +1,23 @@
+.displayInfo{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Info{
+    
+}
+
+.GoBack{
+    height: 4rem;
+    width: 4rem;
+    border: none;
+    border-radius: 50%;
+    background: #ff4d4d;
+    color: white;
+    font-weight: 400;
+    position: fixed;
+    bottom: 5rem;
+    right: 1rem;
+}

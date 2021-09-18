@@ -3,6 +3,8 @@ import {auth, signInWithGoogle} from "../firebase";
 import { authContext } from "../AuthProvider";
 import { Redirect } from "react-router-dom";
 
+import "./login.css";
+
 let Login = ()=>{
     
     let user = useContext(authContext); // jo ahamne createContext se bnaya the vo useContext mein paas kra  
